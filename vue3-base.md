@@ -183,6 +183,8 @@ https://v3.cn.vuejs.org/guide/installation.html#%E5%8F%91%E5%B8%83%E7%89%88%E6%9
 
    <img src=".\img\components.png" alt="Component Tree" style="zoom: 50%;" />
 
+   <img src="https://v3.cn.vuejs.org/images/components.png" alt="Component Tree" style="zoom: 50%;" />
+
 5. **与自定义元素的关系**
 
    你可能已经注意到 Vue 组件非常类似于自定义元素——它是 [Web 组件规范](https://www.w3.org/wiki/WebComponents/)的一部分，这是因为 Vue 的组件语法部分参考了该规范。例如 Vue 组件实现了 [Slot API](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md) 与 `is` attribute。但是，还是有几个关键差别：
