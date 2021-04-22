@@ -181,8 +181,6 @@ https://v3.cn.vuejs.org/guide/installation.html#%E5%8F%91%E5%B8%83%E7%89%88%E6%9
 
    (6)  在一个大型应用中，有必要将整个应用程序划分为多个组件，以使开发更易管理。
 
-   <img src=".\img\components.png" alt="Component Tree" style="zoom: 50%;" />
-
    <img src="https://v3.cn.vuejs.org/images/components.png" alt="Component Tree" style="zoom: 50%;" />
 
 5. **与自定义元素的关系**
@@ -272,7 +270,7 @@ https://v3.cn.vuejs.org/guide/installation.html#%E5%8F%91%E5%B8%83%E7%89%88%E6%9
 
 ### 3.5 生命周期图示
 
-<img src=".\img\lifecycle.svg" alt="Component Tree" style="zoom: 100%;" />
+<img src="https://v3.cn.vuejs.org/images/lifecycle.svg" alt="Component Tree" style="zoom: 100%;" />
 
 ## 4. 模板语法
 
@@ -2148,7 +2146,7 @@ app.mount('#components-demo')
 
 通常一个应用会以一棵嵌套的组件树的形式来组织：
 
-<img src=".\img\components.png" alt="Component Tree" style="zoom: 50%;" />
+<img src="https://v3.cn.vuejs.org/images/components.png" alt="Component Tree" style="zoom: 50%;" />
 
 例如，你可能会有页头、侧边栏、内容区等组件，每个组件又包含了其它的像导航链接、博文之类的组件。
 
