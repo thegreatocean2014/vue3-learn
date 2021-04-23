@@ -1,6 +1,6 @@
 # Vue CLI
 
-## 介绍
+## 1. 介绍
 
 **警告**
 
@@ -50,7 +50,7 @@ CLI 插件是向你的 Vue 项目提供可选功能的 npm 包，例如 Babel/Ty
 
 插件可以作为项目创建过程的一部分，或在后期加入到项目中。它们也可以被归成一组可复用的 preset。我们会在[插件和 preset](https://cli.vuejs.org/zh/guide/plugins-and-presets.html) 章节进行深入讨论。
 
-## 安装
+## 2. 安装
 
 **关于旧版本**
 
@@ -107,9 +107,9 @@ yarn global upgrade --latest @vue/cli
 
 
 
-## **基础**
+## 3. **基础**
 
-### 快速原型开发
+### 3.1 快速原型开发
 
 你可以使用 `vue serve` 和 `vue build` 命令对单个 `*.vue` 文件进行快速原型开发，不过这需要先额外安装一个全局的扩展：
 
@@ -180,9 +180,9 @@ vue build MyComponent.vue
 
 `vue build` 也提供了将组件构建成为一个库或一个 Web Components 组件的能力。查阅[构建目标](https://cli.vuejs.org/zh/guide/build-targets.html)了解更多。
 
-### 创建一个项目
+### 3.2 创建一个项目
 
-#### vue create
+#### 3.2.1 vue create
 
 运行以下命令来创建一个新项目：
 
@@ -244,7 +244,7 @@ vue create --help
   -h, --help                      输出使用帮助信息
 ```
 
-#### 使用图形化界面
+#### 3.2.2 使用图形化界面
 
 你也可以通过 `vue ui` 命令以图形化界面创建和管理项目：
 
@@ -258,7 +258,7 @@ vue ui
 
 <img src="https://cli.vuejs.org/ui-new-project.png" style="zoom:50%;" />
 
-#### 拉取 2.x 模板 (旧版本)
+#### 3.2.3 拉取 2.x 模板 (旧版本)
 
 Vue CLI >= 3 和旧版使用了相同的 `vue` 命令，所以 Vue CLI 2 (`vue-cli`) 被覆盖了。如果你仍然需要使用旧版本的 `vue init` 功能，你可以全局安装一个桥接工具：
 
@@ -268,9 +268,9 @@ npm install -g @vue/cli-init
 vue init webpack my-project
 ```
 
-### 插件和 Preset
+### 3.3 插件和 Preset
 
-#### 插件
+#### 3.3.1 插件
 
 Vue CLI 使用了一套基于插件的架构。如果你查阅一个新创建项目的 `package.json`，就会发现依赖都是以 `@vue/cli-plugin-` 开头的。插件可以修改 webpack 的内部配置，也可以向 `vue-cli-service` 注入命令。在项目创建的过程中，绝大部分列出的特性都是通过插件来实现的。
 
@@ -364,7 +364,7 @@ vue add eslint --config airbnb --lintOn save
 
 更多信息请阅读 [UI 插件 API](https://cli.vuejs.org/zh/dev-guide/ui-api.html)。
 
-#### Preset
+#### 3.3.2 Preset
 
 一个 Vue CLI preset 是一个包含创建新项目所需预定义选项和插件的 JSON 对象，让用户无需在命令提示中选择它们。
 
@@ -481,9 +481,9 @@ vue create --preset my-preset.json my-project
 
 
 
-###  CLI 服务
+### 3.4 CLI 服务
 
-#### 使用命令
+#### 3.4.1 使用命令
 
 在一个 Vue CLI 项目中，`@vue/cli-service` 安装了一个名为 `vue-cli-service` 的命令。你可以在 npm scripts 中以 `vue-cli-service`、或者从终端中以 `./node_modules/.bin/vue-cli-service` 访问这个命令。
 
@@ -518,7 +518,7 @@ yarn serve
 
 <img src="https://cli.vuejs.org/ui-analyzer.png" style="zoom:70%;" />
 
-#### vue-cli-service serve
+#### 3.4.2 vue-cli-service serve
 
 ```text
 用法：vue-cli-service serve [options] [entry]
@@ -539,7 +539,7 @@ yarn serve
 
 命令行参数 `[entry]` 将被指定为唯一入口，而非额外的追加入口。尝试使用 `[entry]` 覆盖 `config.pages` 中的 `entry` 将可能引发错误。
 
-#### vue-cli-service build
+#### 3.4.3 vue-cli-service build
 
 ```text
 用法：vue-cli-service build [options] [entry|pattern]
@@ -565,7 +565,7 @@ yarn serve
 - `--target` 允许你将项目中的任何组件以一个库或 Web Components 组件的方式进行构建。更多细节请查阅[构建目标](https://cli.vuejs.org/zh/guide/build-targets.html)。
 - `--report` 和 `--report-json` 会根据构建统计生成报告，它会帮助你分析包中包含的模块们的大小。
 
-#### vue-cli-service inspect
+#### 3.4.4 vue-cli-service inspect
 
 ```text
 用法：vue-cli-service inspect [options] [...paths]
@@ -577,7 +577,7 @@ yarn serve
 
 你可以使用 `vue-cli-service inspect` 来审查一个 Vue CLI 项目的 webpack config。更多细节请查阅[审查 webpack config](https://cli.vuejs.org/zh/guide/webpack.html#审查项目的-webpack-config)。
 
-#### 查看所有的可用命令
+#### 3.4.5 查看所有的可用命令
 
 有些 CLI 插件会向 `vue-cli-service` 注入额外的命令。例如 `@vue/cli-plugin-eslint` 会注入 `vue-cli-service lint` 命令。你可以运行以下命令查看所有注入的命令：
 
@@ -591,12 +591,12 @@ npx vue-cli-service help
 npx vue-cli-service help [command]
 ```
 
-#### 缓存和并行处理
+#### 3.4.6 缓存和并行处理
 
 - `cache-loader` 会默认为 Vue/Babel/TypeScript 编译开启。文件会缓存在 `node_modules/.cache` 中——如果你遇到了编译方面的问题，记得先删掉缓存目录之后再试试看。
 - `thread-loader` 会在多核 CPU 的机器上为 Babel/TypeScript 转译开启。
 
-#### Git Hook
+#### 3.4.7 Git Hook
 
 在安装之后，`@vue/cli-service` 也会安装 [yorkie](https://github.com/yyx990803/yorkie)，它会让你在 `package.json` 的 `gitHooks` 字段中方便地指定 Git hook：
 
@@ -618,7 +618,7 @@ npx vue-cli-service help [command]
 
 *`yorkie` fork 自 [`husky`](https://github.com/typicode/husky) 并且与后者不兼容。*
 
-#### 配置时无需 Eject
+#### 3.4.8 配置时无需 Eject
 
 通过 `vue create` 创建的项目无需额外的配置就已经可以跑起来了。插件的设计也是可以相互共存的，所以绝大多数情况下，你只需要在交互式命令提示中选取需要的功能即可。
 
@@ -626,17 +626,17 @@ npx vue-cli-service help [command]
 
 
 
-## **开发**
+## 4. **开发**
 
-### 浏览器兼容性
+### 4.1 浏览器兼容性
 
-#### browserslist
+#### 4.1.1 browserslist
 
 你会发现有 `package.json` 文件里的 `browserslist` 字段 (或一个单独的 `.browserslistrc` 文件)，指定了项目的目标浏览器的范围。这个值会被 [@babel/preset-env](https://new.babeljs.io/docs/en/next/babel-preset-env.html) 和 [Autoprefixer](https://github.com/postcss/autoprefixer) 用来确定需要转译的 JavaScript 特性和需要添加的 CSS 浏览器前缀。
 
 现在查阅[这里](https://github.com/ai/browserslist)了解如何指定浏览器范围。
 
-#### Polyfill
+#### 4.1.2 Polyfill
 
 ##### useBuiltIns: 'usage'
 
@@ -676,7 +676,7 @@ npx vue-cli-service help [command]
 
 当使用 Vue CLI 来[构建一个库或是 Web Component](https://cli.vuejs.org/zh/guide/build-targets.html) 时，推荐给 `@vue/babel-preset-app` 传入 `useBuiltIns: false` 选项。这能够确保你的库或是组件不包含不必要的 polyfills。通常来说，打包 polyfills 应当是最终使用你的库的应用的责任。
 
-#### 现代模式
+#### 4.1.3 现代模式
 
 有了 Babel 我们可以兼顾所有最新的 ES2015+ 语言特性，但也意味着我们需要交付转译和 polyfill 后的包以支持旧浏览器。这些转译后的包通常都比原生的 ES2015+ 代码会更冗长，运行更慢。现如今绝大多数现代浏览器都已经支持了原生的 ES2015，所以因为要支持更老的浏览器而为它们交付笨重的代码是一种浪费。
 
@@ -707,9 +707,9 @@ Content-Security-Policy: script-src 'self' 'sha256-4RS22DYeB7U14dra4KcQYxmwt5HkO
 
 
 
-### HTML 和静态资源
+### 4.2 HTML 和静态资源
 
-####  HTML
+#### 4.2.1 HTML
 
 #####  Index 文件
 
@@ -811,7 +811,7 @@ module.exports = {
 
 不是每个应用都需要是一个单页应用。Vue CLI 支持使用 [`vue.config.js` 中的 `pages` 选项](https://cli.vuejs.org/zh/config/#pages)构建一个多页面的应用。构建好的应用将会在不同的入口之间高效共享通用的 chunk 以获得最佳的加载性能。
 
-#### 处理静态资源
+#### 4.2.2 处理静态资源
 
 静态资源可以通过两种方式进行处理：
 
@@ -905,15 +905,15 @@ module.exports = {
 - 你有上千个图片，需要动态引用它们的路径。
 - 有些库可能和 webpack 不兼容，这时你除了将其用一个独立的 `<script>` 标签引入没有别的选择。
 
-### CSS 相关
+### 4.3 CSS 相关
 
 Vue CLI 项目天生支持 [PostCSS](http://postcss.org/)、[CSS Modules](https://github.com/css-modules/css-modules) 和包含 [Sass](https://sass-lang.com/)、[Less](http://lesscss.org/)、[Stylus](http://stylus-lang.com/) 在内的预处理器。
 
-#### 引用静态资源
+#### 4.3.1 引用静态资源
 
 所有编译后的 CSS 都会通过 [css-loader](https://github.com/webpack-contrib/css-loader) 来解析其中的 `url()` 引用，并将这些引用作为模块请求来处理。这意味着你可以根据本地的文件结构用相对路径来引用静态资源。另外要注意的是如果你想要引用一个 npm 依赖中的文件，或是想要用 webpack alias，则需要在路径前加上 `~` 的前缀来避免歧义。更多细节请参考[处理静态资源](https://cli.vuejs.org/zh/guide/html-and-static-assets.html#处理静态资源)。
 
-#### 预处理器
+#### 4.3.2 预处理器
 
 你可以在创建项目的时候选择预处理器 (Sass/Less/Stylus)。如果当时没有选好，内置的 webpack 仍然会被预配置为可以完成所有的处理。你也可以手动安装相应的 webpack loader：
 
@@ -964,7 +964,7 @@ function addStyleResource (rule) {
 
 你也可以选择使用 [vue-cli-plugin-style-resources-loader](https://www.npmjs.com/package/vue-cli-plugin-style-resources-loader)。
 
-#### PostCSS
+#### 4.3.3 PostCSS
 
 Vue CLI 内部使用了 PostCSS。
 
@@ -976,7 +976,7 @@ Vue CLI 内部使用了 PostCSS。
 
 *在生产环境构建中，Vue CLI 会优化 CSS 并基于目标浏览器抛弃不必要的浏览器前缀规则。因为默认开启了 `autoprefixer`，你只使用无前缀的 CSS 规则即可。*
 
-#### CSS Modules
+#### 4.3.4 CSS Modules
 
 你可以通过 `<style module>` 以开箱即用的方式[在 `*.vue` 文件中使用 CSS Modules](https://vue-loader.vuejs.org/zh/guide/css-modules.html)。
 
@@ -1020,7 +1020,7 @@ module.exports = {
 }
 ```
 
-#### 向预处理器 Loader 传递选项
+#### 4.3.5 向预处理器 Loader 传递选项
 
 有的时候你想要向 webpack 的预处理器 loader 传递选项。你可以使用 `vue.config.js` 中的 `css.loaderOptions` 选项。比如你可以这样向所有 Sass/Less 样式传入共享的全局变量：
 
@@ -1069,9 +1069,9 @@ Loader 可以通过 `loaderOptions` 配置，包括：
 
 *这样做比使用 `chainWebpack` 手动指定 loader 更推荐，因为这些选项需要应用在使用了相应 loader 的多个地方。*
 
-###  webpack 相关
+### 4.4 webpack 相关
 
-#### 简单的配置方式
+#### 4.4.1 简单的配置方式
 
 调整 webpack 配置最简单的方式就是在 `vue.config.js` 中的 `configureWebpack` 选项提供一个对象：
 
@@ -1107,7 +1107,7 @@ module.exports = {
 }
 ```
 
-#### 链式操作 (高级)
+#### 4.4.2 链式操作 (高级)
 
 Vue CLI 内部的 webpack 配置是通过 [webpack-chain](https://github.com/mozilla-neutrino/webpack-chain) 维护的。这个库提供了一个 webpack 原始配置的上层抽象，使其可以定义具名的 loader 规则和具名插件，并有机会在后期进入这些规则并对它们的选项进行修改。
 
@@ -1216,7 +1216,7 @@ module.exports = {
 
 你可以通过接下来要讨论的工具 **`vue inspect`** 来确认变更。
 
-#### 审查项目的 webpack 配置
+#### 4.4.3 审查项目的 webpack 配置
 
 因为 `@vue/cli-service` 对 webpack 配置进行了抽象，所以理解配置中包含的东西会比较困难，尤其是当你打算自行对其调整的时候。
 
@@ -1253,7 +1253,7 @@ vue inspect --rules
 vue inspect --plugins
 ```
 
-####  以一个文件的方式使用解析好的配置
+#### 4.4.4 以一个文件的方式使用解析好的配置
 
 有些外部工具可能需要通过一个文件访问解析好的 webpack 配置，比如那些需要提供 webpack 配置路径的 IDE 或 CLI。在这种情况下你可以使用如下路径：
 
@@ -1263,9 +1263,9 @@ vue inspect --plugins
 
 该文件会动态解析并输出 `vue-cli-service` 命令中使用的相同的 webpack 配置，包括那些来自插件甚至是你自定义的配置。
 
-### 模式和环境变量
+### 4.5 模式和环境变量
 
-#### 模式
+#### 4.5.1 模式
 
 **模式**是 Vue CLI 项目中一个重要的概念。默认情况下，一个 Vue CLI 项目有三个模式：
 
@@ -1293,7 +1293,7 @@ vue-cli-service build --mode development
 
 *如果在环境中有默认的 `NODE_ENV`，你应该移除它或在运行 `vue-cli-service` 命令的时候明确地设置 `NODE_ENV`。*
 
-#### 环境变量
+#### 4.5.2 环境变量
 
 你可以在你的项目根目录中放置下列文件来指定环境变量：
 
@@ -1340,7 +1340,7 @@ CONCAT=$FOO$BAR # CONCAT=foobar
 `.env` 环境文件是通过运行 `vue-cli-service` 命令载入的，因此环境文件发生变化，你需要重启服务。
 ```
 
-#### 示例：Staging 模式
+#### 4.5.3 示例：Staging 模式
 
 假设我们有一个应用包含以下 `.env` 文件：
 
@@ -1360,7 +1360,7 @@ VUE_APP_TITLE=My App (staging)
 
 这两种情况下，根据 `NODE_ENV`，构建出的应用都是生产环境应用，但是在 staging 版本中，`process.env.VUE_APP_TITLE` 被覆写成了另一个值。
 
-#### 在客户端侧代码中使用环境变量
+#### 4.5.4 在客户端侧代码中使用环境变量
 
 只有以 `VUE_APP_` 开头的变量会被 `webpack.DefinePlugin` 静态嵌入到客户端侧的包中。你可以在应用的代码中这样访问它们：
 
@@ -1388,7 +1388,7 @@ module.exports = {
 }
 ```
 
-#### 只在本地有效的变量
+#### 4.5.5 只在本地有效的变量
 
 有的时候你可能有一些不应该提交到代码仓库中的变量，尤其是当你的项目托管在公共仓库时。这种情况下你应该使用一个 `.env.local` 文件取而代之。本地环境文件默认会被忽略，且出现在 `.gitignore` 中。
 
@@ -1396,251 +1396,727 @@ module.exports = {
 
 
 
+### 4.6 构建目标
 
+当你运行 `vue-cli-service build` 时，你可以通过 `--target` 选项指定不同的构建目标。它允许你将相同的源代码根据不同的用例生成不同的构建。
 
+#### 4.6.1 应用
 
+应用模式是默认的模式。在这个模式中：
 
+- `index.html` 会带有注入的资源和 resource hint
+- 第三方库会被分到一个独立包以便更好的缓存
+- 小于 4kb 的静态资源会被内联在 JavaScript 中
+- `public` 中的静态资源会被复制到输出目录中
 
+#### 4.6.2 库
 
+```
+关于 IE 兼容性的提醒
 
+在库模式中，项目的 `publicPath` 是根据主文件的加载路径[动态设置](https://github.com/vuejs/vue-cli/blob/dev/packages/@vue/cli-service/lib/commands/build/setPublicPath.js)的（用以支持动态的资源加载能力）。但是这个功能用到了 `document.currentScript`，而 IE 浏览器并不支持这一特性。所以如果网站需要支持 IE 的话，建议使用库之前先在页面上引入 [current-script-polyfill](https://www.npmjs.com/package/current-script-polyfill)。
+```
 
+```
+注意对 Vue 的依赖
 
+在库模式中，Vue 是*外置的*。这意味着包中不会有 Vue，即便你在代码中导入了 Vue。如果这个库会通过一个打包器使用，它将尝试通过打包器以依赖的方式加载 Vue；否则就会回退到一个全局的 `Vue` 变量。
 
+要避免此行为，可以在`build`命令中添加`--inline-vue`标志。
 
+vue-cli-service build --target lib --inline-vue
+```
 
+你可以通过下面的命令将一个单独的入口构建为一个库：
 
+```text
+vue-cli-service build --target lib --name myLib [entry]
+```
 
+```text
+File                     Size                     Gzipped
 
+dist/myLib.umd.min.js    13.28 kb                 8.42 kb
+dist/myLib.umd.js        20.95 kb                 10.22 kb
+dist/myLib.common.js     20.57 kb                 10.09 kb
+dist/myLib.css           0.33 kb                  0.23 kb
+```
 
+这个入口可以是一个 `.js` 或一个 `.vue` 文件。如果没有指定入口，则会使用 `src/App.vue`。
 
+构建一个库会输出：
 
+- `dist/myLib.common.js`：一个给打包器用的 CommonJS 包 (不幸的是，webpack 目前还并没有支持 ES modules 输出格式的包)
+- `dist/myLib.umd.js`：一个直接给浏览器或 AMD loader 使用的 UMD 包
+- `dist/myLib.umd.min.js`：压缩后的 UMD 构建版本
+- `dist/myLib.css`：提取出来的 CSS 文件 (可以通过在 `vue.config.js` 中设置 `css: { extract: false }` 强制内联)
 
+**警告**
 
+*如果你在开发一个库或多项目仓库 (monorepo)，请注意导入 CSS **是具有副作用的**。请确保在 `package.json` 中**移除** `"sideEffects": false`，否则 CSS 代码块会在生产环境构建时被 webpack 丢掉。*
 
+##### Vue vs. JS/TS 入口文件
 
+当使用一个 `.vue` 文件作为入口时，你的库会直接暴露这个 Vue 组件本身，因为组件始终是默认导出的内容。
 
+然而，当你使用一个 `.js` 或 `.ts` 文件作为入口时，它可能会包含具名导出，所以库会暴露为一个模块。也就是说你的库必须在 UMD 构建中通过 `window.yourLib.default` 访问，或在 CommonJS 构建中通过 `const myLib = require('mylib').default` 访问。如果你没有任何具名导出并希望直接暴露默认导出，你可以在 `vue.config.js` 中使用以下 webpack 配置：
 
+```js
+module.exports = {
+  configureWebpack: {
+    output: {
+      libraryExport: 'default'
+    }
+  }
+}
+```
 
+#### 4.6.3 Web Components 组件
 
+**兼容性提示**
 
+*Web Components 模式不支持 IE11 及更低版本。[更多细节](https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-web-component-wrapper/README.md#兼容性)*
 
+**注意对 Vue 的依赖**
 
+*在 Web Components 模式中，Vue 是外置的。这意味着包中不会有 Vue，即便你在代码中导入了 Vue。这里的包会假设在页面中已经有一个可用的全局变量 `Vue`。*
 
+你可以通过下面的命令将一个单独的入口构建为一个 Web Components 组件：
 
+```text
+vue-cli-service build --target wc --name my-element [entry]
+```
 
+注意这里的入口应该是一个 `*.vue` 文件。Vue CLI 将会把这个组件自动包裹并注册为 Web Components 组件，无需在 `main.js` 里自行注册。也可以在开发时把 `main.js` 作为 demo app 单独使用。
 
+该构建将会产生一个单独的 JavaScript 文件 (及其压缩后的版本) 将所有的东西都内联起来。当这个脚本被引入网页时，会注册自定义组件 `<my-element>`，其使用 `@vue/web-component-wrapper` 包裹了目标的 Vue 组件。这个包裹器会自动代理属性、特性、事件和插槽。请查阅 [`@vue/web-component-wrapper` 的文档](https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-web-component-wrapper/README.md)了解更多细节。
 
+**注意这个包依赖了在页面上全局可用的 `Vue`。**
 
+这个模式允许你的组件的使用者以一个普通 DOM 元素的方式使用这个 Vue 组件：
 
+```html
+<script src="https://unpkg.com/vue"></script>
+<script src="path/to/my-element.js"></script>
 
+<!-- 可在普通 HTML 中或者其它任何框架中使用 -->
+<my-element></my-element>
+```
 
+##### 注册多个 Web Components 组件的包
 
+当你构建一个 Web Components 组件包的时候，你也可以使用一个 glob 表达式作为入口指定多个组件目标：
 
+```text
+vue-cli-service build --target wc --name foo 'src/components/*.vue'
+```
 
+当你构建多个 web component 时，`--name` 将会用于设置前缀，同时自定义元素的名称会由组件的文件名推导得出。比如一个名为 `HelloWorld.vue` 的组件携带 `--name foo` 将会生成的自定义元素名为 `<foo-hello-world>`。
 
+##### 异步 Web Components 组件
 
+当指定多个 Web Components 组件作为目标时，这个包可能会变得非常大，并且用户可能只想使用你的包中注册的一部分组件。这时异步 Web Components 模式会生成一个 code-split 的包，带一个只提供所有组件共享的运行时，并预先注册所有的自定义组件小入口文件。一个组件真正的实现只会在页面中用到自定义元素相应的一个实例时按需获取：
 
+```text
+vue-cli-service build --target wc-async --name foo 'src/components/*.vue'
+```
 
+```text
+File                Size                        Gzipped
 
+dist/foo.0.min.js    12.80 kb                    8.09 kb
+dist/foo.min.js      7.45 kb                     3.17 kb
+dist/foo.1.min.js    2.91 kb                     1.02 kb
+dist/foo.js          22.51 kb                    6.67 kb
+dist/foo.0.js        17.27 kb                    8.83 kb
+dist/foo.1.js        5.24 kb                     1.64 kb
+```
 
+现在用户在该页面上只需要引入 Vue 和这个入口文件即可：
 
+```html
+<script src="https://unpkg.com/vue"></script>
+<script src="path/to/foo.min.js"></script>
 
+<!-- foo-one 的实现的 chunk 会在用到的时候自动获取 -->
+<foo-one></foo-one>
+```
 
+#### 4.6.4 在构建时使用 vuex
 
+在构建 [Web Components 组件](https://cli.vuejs.org/zh/guide/build-targets.html#web-components-组件)或[库](https://cli.vuejs.org/zh/guide/build-targets.html#库)时，入口点不是 `main.js` ，而是 `entry-wc.js` 文件，该文件由此生成： https://github.com/vuejs/vue-cli/blob/dev/packages/%40vue/cli-service/lib/commands/build/resolveWcEntry.js
 
+因此，要在 Web Components 组件的目标中使用 vuex ，你需要在 `App.vue` 中初始化存储 (store):
 
+```js
+import store from './store'
 
+// ...
 
+export default {
+  store,
+  name: 'App',
+  // ...
+}
+```
 
+### 4.7 部署
 
+#### 4.7.1 通用指南
 
+如果你用 Vue CLI 处理静态资源并和后端框架一起作为部署的一部分，那么你需要的仅仅是确保 Vue CLI 生成的构建文件在正确的位置，并遵循后端框架的发布方式即可。
 
+如果你独立于后端部署前端应用——也就是说后端暴露一个前端可访问的 API，然后前端实际上是纯静态应用。那么你可以将 `dist` 目录里构建的内容部署到任何静态文件服务器中，但要确保正确的 [publicPath](https://cli.vuejs.org/zh/config/#publicpath)。
 
+##### 本地预览
 
+`dist` 目录需要启动一个 HTTP 服务器来访问 (除非你已经将 `publicPath` 配置为了一个相对的值)，所以以 `file://` 协议直接打开 `dist/index.html` 是不会工作的。在本地预览生产环境构建最简单的方式就是使用一个 Node.js 静态文件服务器，例如 [serve](https://github.com/zeit/serve)
 
+```bash
+npm install -g serve
+# -s 参数的意思是将其架设在 Single-Page Application 模式下
+# 这个模式会处理即将提到的路由问题
+serve -s dist
+```
 
+##### 使用 `history.pushState` 的路由
 
+如果你在 `history` 模式下使用 Vue Router，是无法搭配简单的静态文件服务器的。例如，如果你使用 Vue Router 为 `/todos/42/` 定义了一个路由，开发服务器已经配置了相应的 `localhost:3000/todos/42` 响应，但是一个为生产环境构建架设的简单的静态服务器会却会返回 404。
 
+为了解决这个问题，你需要配置生产环境服务器，将任何没有匹配到静态文件的请求回退到 `index.html`。Vue Router 的文档提供了[常用服务器配置指引](https://router.vuejs.org/zh/guide/essentials/history-mode.html)。
 
+##### CORS
 
+如果前端静态内容是部署在与后端 API 不同的域名上，你需要适当地配置 [CORS](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)。
 
+##### PWA
 
+如果你使用了 PWA 插件，那么应用必须架设在 HTTPS 上，这样 [Service Worker](https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API) 才能被正确注册。
 
+#### 4.7.2 平台指南
 
+##### 1、云开发 CloudBase
 
+[云开发 CloudBase](https://cloudbase.net/?site=vuecli) 是一个云原生一体化的 Serverless 云平台，支持静态网站、容器等多种托管能力，并提供简便的部署工具 [CloudBase Framework](https://cloudbase.net/framework.html?site=vuecli)) 来一键部署应用。
 
+**步骤一：安装云开发 CloudBase CLI**
 
+CloudBase CLI 集成了 [CloudBase Framework](https://github.com/TencentCloudBase/cloudbase-framework?site=vuecli)) 的能力，全局安装 CloudBase CLI 请运行以下命令：
 
+```text
+npm install -g @cloudbase/cli
+```
 
+**步骤二：一键部署**
 
+在项目根目录运行以下命令部署 Vue CLI 创建的应用，在部署之前可以先 [开通环境](https://console.cloud.tencent.com/tcb/env/index?tdl_anchor=ad&tdl_site=vuejs)
 
+```text
+cloudbase init --without-template
+cloudbase framework:deploy
+```
 
+CloudBase CLI 首先跳转到控制台进行登录授权，然后将会交互式进行以下步骤
 
+- 选择一个环境，如果没有可以选择新建环境
+- 自动检测项目并确认构建脚本，输出目录、部署云端路径等信息
 
+确认信息后会立即进行部署，部署完成后，可以获得一个自动 SSL，CDN 加速的网站应用，你也可以搭配使用 Github Action 来持续部署 Github 上的 Vue 应用。
 
+#####  2、混合部署
 
+除了部署一个纯静态的 Vue CLI 项目之外，还可以快速一键部署混合的全栈 Vue 应用：
 
+- 使用 `cloudbase init --template vue` 快速创建和部署一个包含 Serverless 云函数后端的 Vue 应用
+- 使用 `cloudbase init --template nuxt-ssr` 快速创建和部署一个包含 SSR 和 Serverless 云函数后端的 Vue 应用
 
+详细信息请查看 CloudBase Framework 的[部署项目示例](https://github.com/TencentCloudBase/cloudbase-framework?site=vuecli#项目示例)
 
+##### 3、GitHub Pages
 
+**手动推送更新**
 
+1. 在 `vue.config.js` 中设置正确的 `publicPath`。
 
+   如果打算将项目部署到 `https://<USERNAME>.github.io/` 上, `publicPath` 将默认被设为 `"/"`，你可以忽略这个参数。
 
+   如果打算将项目部署到 `https://<USERNAME>.github.io/<REPO>/` 上 (即仓库地址为 `https://github.com/<USERNAME>/<REPO>`)，可将 `publicPath` 设为 `"/<REPO>/"`。举个例子，如果仓库名字为“my-project”，那么 `vue.config.js` 的内容应如下所示：
 
+   ```js
+   module.exports = {
+     publicPath: process.env.NODE_ENV === 'production'
+       ? '/my-project/'
+       : '/'
+   }
+   ```
 
+2. 在项目目录下，创建内容如下的 `deploy.sh` (可以适当地取消注释) 并运行它以进行部署：
 
+   ```bash
+   #!/usr/bin/env sh
+   
+   # 当发生错误时中止脚本
+   set -e
+   
+   # 构建
+   npm run build
+   
+   # cd 到构建输出的目录下 
+   cd dist
+   
+   # 部署到自定义域域名
+   # echo 'www.example.com' > CNAME
+   
+   git init
+   git add -A
+   git commit -m 'deploy'
+   
+   # 部署到 https://<USERNAME>.github.io
+   # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
+   
+   # 部署到 https://<USERNAME>.github.io/<REPO>
+   # git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
+   
+   cd -
+   ```
 
+**使用 Travis CI 自动更新**
 
+1. 仿照上面在 `vue.config.js` 中设置正确的 `publicPath`。
 
+2. 安装 Travis CLI 客户端：`gem install travis && travis --login`
 
+3. 生成一个拥有“repo”权限的 GitHub [访问令牌](https://help.github.com/cn/articles/creating-a-personal-access-token-for-the-command-line)。
 
+4. 授予 Travis 访问仓库的权限：`travis set GITHUB_TOKEN=xxx` (`xxx` 是第三步中的个人访问令牌)
 
+5. 在项目根目录下创建一个 `.travis.yml` 文件。
 
+   ```yaml
+   language: node_js
+   node_js:
+     - "node"
+   
+   cache: npm
+   
+   script: npm run build
+   
+   deploy:
+   provider: pages
+   skip_cleanup: true
+   github_token: $GITHUB_TOKEN
+   local_dir: dist
+   on:
+     branch: master
+   ```
 
+6. 将 `.travis.yml` 文件推送到仓库来触发第一次构建。
 
+##### 4、GitLab Pages
 
+根据 [GitLab Pages 文档](https://docs.gitlab.com/ee/user/project/pages/)的描述，所有的配置都在根目录中的`.gitlab-ci.yml` 文件中。下面的范例是一个很好的入门:
 
+```yaml
+# .gitlab-ci.yml 文件应放在你仓库的根目录下 
 
+pages: # 必须定义一个名为 pages 的 job
+  image: node:latest
+  stage: deploy
+  script:
+    - npm ci
+    - npm run build
+    - mv public public-vue # GitLab Pages 的钩子设置在 public 文件夹
+    - mv dist public # 重命名 dist 文件夹 (npm run build 之后的输出位置)
+  artifacts:
+    paths:
+      - public # artifact path 一定要在 /public , 这样 GitLab Pages 才能获取
+  only:
+    - master
+```
 
+通常, 你的静态页面将托管在 https://yourUserName.gitlab.io/yourProjectName 上, 所以你可以创建一个 initial `vue.config.js` 文件去 [更新 `BASE_URL`](https://github.com/vuejs/vue-cli/tree/dev/docs/config#baseurl) 要匹配的值 ：
 
+```javascript
+// vue.config.js 位于仓库的根目录下
+// 确保用 GitLab 项目的名称替换了 `YourProjectName`
 
+module.exports = {
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/yourProjectName/'
+    : '/'
+}
+```
 
+请阅读在 [GitLab Pages domains](https://docs.gitlab.com/ee/user/project/pages/getting_started_part_one.html#gitlab-pages-domain) 的文档来学习更多关于页面部署 URL 的信息。注意，你也可以[使用自定义域名](https://docs.gitlab.com/ee/user/project/pages/getting_started_part_three.html#adding-your-custom-domain-to-gitlab-pages)。
 
+在推送到仓库之前提交 `.gitlab-ci.yml` 和 `vue.config.js` 文件。GitLab CI 的管道将会被触发: 当成功时候, 到 `Settings > Pages` 查看关于网站的链接。
 
+##### 5、Netlify
 
+1. 在 Netlify 上，使用以下设置从 GitHub 创建新项目:
+   - **构建命令:** `npm run build` 或 `yarn build`
+   - **发布目录:** `dist`
+2. 点击“deploy”按钮！
 
+也可以查看 [vue-cli-plugin-netlify-lambda](https://github.com/netlify/vue-cli-plugin-netlify-lambda)。
 
+如果使用 Vue Router 的 history 模式，你需要在 `/public` 目录下创建一个 `_redirects` 文件：
 
+```text
+# 单页应用的 Netlify 设置
+/*    /index.html   200
+```
 
+详细信息请查看 [Netlify 重定向文档](https://www.netlify.com/docs/redirects/#history-pushstate-and-single-page-apps)
 
+##### 6、Render
 
+[Render](https://render.com/) 提供带有全托管 SSL，全球 CDN 和 GitHub 持续自动部署的[免费静态站点托管](https://render.com/docs/static-sites)服务。
 
+1. 在 Render 上创建一个新的 Web Service，并授予 Render 的 GitHub 应用访问你的 Vue 仓库的权限。
+2. 在创建过程中使用以下设置：
+   - **环境**：`Static Site`
+   - **构建命令**：`npm run build` 或者 `yarn build`
+   - **发布目录**：`dist`
 
+大功告成！构建结束时你的应用便会在你的 Render URL 上线。
 
+如果使用 Vue Router 的 history 模式，你需要在站点的 `Redirects/Rewrites` 设置中添加以下改写规则：
 
+- **Source**: `/*`
+- **Destination**: `/index.html`
+- **Status**: `Rewrite`
 
+详细信息请查看 Render 的[重定向和改写](https://render.com/docs/redirects-rewrites)及[自定义域名](https://render.com/docs/custom-domains)文档。
 
+##### 7、Amazon S3
 
+参见 [vue-cli-plugin-s3-deploy](https://github.com/multiplegeorges/vue-cli-plugin-s3-deploy)
 
+##### 8、Firebase
 
+创建一个新的 Firebase 项目 [Firebase console](https://console.firebase.google.com/)。 请参考[文档](https://firebase.google.com/docs/web/setup)。
 
+确保已经全局安装了 [firebase-tools](https://github.com/firebase/firebase-tools) ：
 
+```text
+npm install -g firebase-tools
+```
 
+在项目的根目录下, 用以下命令初始化 `firebase` ：
 
+```text
+firebase init
+```
 
+Firebase 将会询问有关初始化项目的一些问题。
 
+- 选择需要 Firebase CLI 的功能。 一定要选择 `hosting` 。
 
+- 选择默认的 Firebase 项目。
 
+- 将 `public` 目录设为 `dist` (或构建输出的位置) 这将会上传到 Firebase Hosting。
 
+  ```javascript
+  // firebase.json
+  
+  {
+    "hosting": {
+      "public": "dist"
+    }
+  }
+  ```
 
+- 选择 `yes` 设置项目为一个单页应用。 这将会创建一个 `index.html` 在 `dist` 文件夹并且配置 `hosting` 信息。
 
+  ```javascript
+  // firebase.json
+  
+  {
+    "hosting": {
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  }
+  ```
 
+执行 `npm run build` 去构建项目。
 
+在 `Firebase Hosting` 部署项目，执行以下命令 ：
 
+```text
+firebase deploy --only hosting
+```
 
+如果需要在部署的项目中使用的其他 Firebase CLI 功能， 执行 `firebase deploy` 去掉 `--only` 参数。
 
+现在可以到 `https://<YOUR-PROJECT-ID>.firebaseapp.com` 访问你的项目了。
 
+请参考 [Firebase 文档](https://firebase.google.com/docs/hosting/deploying) 来获取更多细节。
 
+##### 9、Vercel
 
+[Vercel](https://vercel.com/) 是一个网站和无服务器 (Serverless) API 云平台，你可以使用你的个人域名 (或是免费的 `.vercel.app` URL) 部署你的 Vue 项目。
 
+**步骤一：安装 Now CLI**
 
+要使用 [npm](https://www.npmjs.com/package/vercel) 安装其命令行界面，运行以下命令：
 
+```text
+npm install -g vercel
+```
 
+**步骤二：部署**
 
+在项目根目录运行以下命令部署你的应用：
 
+```text
+vercel
+```
 
+**此外**，你还可以使用他们的 [GitHub](https://vercel.com/github) 或 [GitLab](https://vercel.com/gitlab) 集成服务。
 
+大功告成！
 
+你的站点会开始部署，你将获得一个形如 https://vue.now-examples.now.sh/ （或`.vercel.app`）的链接。
 
+开箱即用地，请求会被自动改写到 `index.html` (除了自定义的静态文件) 并带有合适的缓存请求头。
 
+##### 10、Stdlib
 
+未完成 | 欢迎参与贡献。
 
+##### 11、Heroku
 
+1. [安装 Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 
+2. 创建 `static.json` 文件：
 
+   ```json
+   {
+     "root": "dist",
+     "clean_urls": true,
+     "routes": {
+       "/**": "index.html"
+     }
+   }
+   ```
 
+3. 将 `static.json` 加入 Git
 
+   ```text
+   git add static.json
+   git commit -m "add static configuration"
+   ```
 
+4. 部署到 Heroku
 
+   ```text
+   heroku login
+   heroku create
+   heroku buildpacks:add heroku/nodejs
+   heroku buildpacks:add https://github.com/heroku/heroku-buildpack-static
+   git push heroku master
+   ```
 
+详细信息：https://gist.github.com/hone/24b06869b4c1eca701f9
 
+##### 12、Surge
 
+要使用 [Surge](http://surge.sh/) 进行部署，步骤非常简单。
 
+首先，通过运行 `npm run build` 来构建项目。如果还没有安装 Surge 的命令行工具，可以通过运行命令来执行此操作：
 
+```text
+npm install --global surge
+```
 
+然后 cd 进入项目的 `dist/` 文件夹，然后运行 `surge` 并按照屏幕提示操作 。如果是第一次使用 Surge，它会要求设置电子邮件和密码。确认项目文件夹以及输入首选域来查看正在部署的项目，如下所示。
 
+```text
+            project: /Users/user/Documents/myawesomeproject/dist/
+         domain: myawesomeproject.surge.sh
+         upload: [====================] 100% eta: 0.0s (31 files, 494256 bytes)
+            CDN: [====================] 100%
+             IP: **.**.***.***
 
+   Success! - Published to myawesomeproject.surge.sh
+```
 
+通过访问 `myawesomeproject.surge.sh` 来确保你的项目已经成功的用 Surge 发布，有关自定义域名等更多设置详细信息，可以到 [Surge's help page](https://surge.sh/help/) 查看。
 
+##### 13、Bitbucket Cloud
 
+1. 如 [Bitbucket 文档](https://confluence.atlassian.com/bitbucket/publishing-a-website-on-bitbucket-cloud-221449776.html) 创建一个命名为 `<USERNAME>.bitbucket.io` 的仓库。
 
+2. 如果你想拥有多个网站， 想要发布到主仓库的子文件夹中。这种情况下就要在 `vue.config.js` 设置 `publicPath`。
 
+   如果部署到 `https://<USERNAME>.bitbucket.io/`， `publicPath` 默认将被设为 `"/"`，你可以选择忽略它。
 
+   如果要部署到 `https://<USERNAME>.bitbucket.io/<SUBFOLDER>/`，设置 `publicPath` 为 `"/<SUBFOLDER>/"`。在这种情况下，仓库的目录结构应该反映 url 结构，例如仓库应该有 `/<SUBFOLDER>` 目录。
 
+3. 在项目中， `deploy.sh` 使用以下内容创建并运行它以进行部署：
 
+   ```bash
+   #!/usr/bin/env sh
+   
+   # 当发生错误时中止脚本
+   set -e
+   
+   # 构建
+   npm run build
+   
+   # cd 到构建输出的目录
+   cd dist
+   
+   git init
+   git add -A
+   git commit -m 'deploy'
+   
+   git push -f git@bitbucket.org:<USERNAME>/<USERNAME>.bitbucket.io.git master
+   
+   cd -
+   ```
 
+##### 14、Docker (Nginx)
 
+在 Docker 容器中使用 Nginx 部署你的应用。
 
+1. 安装 [Docker](https://www.docker.com/get-started)
 
+2. 在项目根目录创建 `Dockerfile` 文件
 
+   ```dockerfile
+   FROM node:10
+   COPY ./ /app
+   WORKDIR /app
+   RUN npm install && npm run build
+   
+   FROM nginx
+   RUN mkdir /app
+   COPY --from=0 /app/dist /app
+   COPY nginx.conf /etc/nginx/nginx.conf
+   ```
 
+3. 在项目根目录创建 `.dockerignore` 文件
 
+   设置 `.dockerignore` 文件能防止 `node_modules` 和其他中间构建产物被复制到镜像中导致构建问题。
 
+   ```text
+   **/node_modules
+   **/dist
+   ```
 
+4. 在项目根目录创建 `nginx.conf` 文件
 
+   `Nginx` 是一个能在 Docker 容器中运行的 HTTP(s) 服务器。它使用配置文件决定如何提供内容、要监听的端口等。参阅 [Nginx 设置文档](https://www.nginx.com/resources/wiki/start/topics/examples/full/) 以了解所有可能的设置选项。
 
+   下面是一个简单的 `Nginx` 设置文件，它会在 `80` 端口上提供你的 Vue 项目。`页面未找到` / `404` 错误使用的是 `index.html`，这让我们可以使用基于 `pushState()` 的路由。
 
+   ```text
+   user  nginx;
+   worker_processes  1;
+   error_log  /var/log/nginx/error.log warn;
+   pid        /var/run/nginx.pid;
+   events {
+     worker_connections  1024;
+   }
+   http {
+     include       /etc/nginx/mime.types;
+     default_type  application/octet-stream;
+     log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                       '$status $body_bytes_sent "$http_referer" '
+                       '"$http_user_agent" "$http_x_forwarded_for"';
+     access_log  /var/log/nginx/access.log  main;
+     sendfile        on;
+     keepalive_timeout  65;
+     server {
+       listen       80;
+       server_name  localhost;
+       location / {
+         root   /app;
+         index  index.html;
+         try_files $uri $uri/ /index.html;
+       }
+       error_page   500 502 503 504  /50x.html;
+       location = /50x.html {
+         root   /usr/share/nginx/html;
+       }
+     }
+   }
+   ```
 
+5. 构建你的 Docker 镜像
 
+   ```bash
+   docker build . -t my-app
+   # Sending build context to Docker daemon  884.7kB
+   # ...
+   # Successfully built 4b00e5ee82ae
+   # Successfully tagged my-app:latest
+   ```
 
+6. 运行你的 Docker 镜像
 
+   这个例子基于官方 `Nginx` 镜像，因此已经设置了日志重定向并关闭了自我守护进程。它也提供了其他有利于 Nginx 在 Docker 容器中运行的默认设置。更多信息参阅 [Nginx Docker 仓库](https://hub.docker.com/_/nginx)。
 
+   ```bash
+   docker run -d -p 8080:80 my-app
+   curl localhost:8080
+   # <!DOCTYPE html><html lang=en>...</html>
+   ```
 
 
 
 
 
+## 5. 配置参考
 
+https://cli.vuejs.org/zh/config/#nightwatch
 
+配置参考
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [全局 CLI 配置](https://cli.vuejs.org/zh/config/#%E5%85%A8%E5%B1%80-cli-%E9%85%8D%E7%BD%AE)
+- [目标浏览器](https://cli.vuejs.org/zh/config/#%E7%9B%AE%E6%A0%87%E6%B5%8F%E8%A7%88%E5%99%A8)
+- [vue.config.js](https://cli.vuejs.org/zh/config/#vue-config-js)
+  - [baseUrl](https://cli.vuejs.org/zh/config/#baseurl)
+  - [publicPath](https://cli.vuejs.org/zh/config/#publicpath)
+  - [outputDir](https://cli.vuejs.org/zh/config/#outputdir)
+  - [assetsDir](https://cli.vuejs.org/zh/config/#assetsdir)
+  - [indexPath](https://cli.vuejs.org/zh/config/#indexpath)
+  - [filenameHashing](https://cli.vuejs.org/zh/config/#filenamehashing)
+  - [pages](https://cli.vuejs.org/zh/config/#pages)
+  - [lintOnSave](https://cli.vuejs.org/zh/config/#lintonsave)
+  - [runtimeCompiler](https://cli.vuejs.org/zh/config/#runtimecompiler)
+  - [transpileDependencies](https://cli.vuejs.org/zh/config/#transpiledependencies)
+  - [productionSourceMap](https://cli.vuejs.org/zh/config/#productionsourcemap)
+  - [crossorigin](https://cli.vuejs.org/zh/config/#crossorigin)
+  - [integrity](https://cli.vuejs.org/zh/config/#integrity)
+  - [configureWebpack](https://cli.vuejs.org/zh/config/#configurewebpack)
+  - [chainWebpack](https://cli.vuejs.org/zh/config/#chainwebpack)
+  - [css.modules](https://cli.vuejs.org/zh/config/#css-modules)
+  - [css.requireModuleExtension](https://cli.vuejs.org/zh/config/#css-requiremoduleextension)
+  - [css.extract](https://cli.vuejs.org/zh/config/#css-extract)
+  - [css.sourceMap](https://cli.vuejs.org/zh/config/#css-sourcemap)
+  - [css.loaderOptions](https://cli.vuejs.org/zh/config/#css-loaderoptions)
+  - [devServer](https://cli.vuejs.org/zh/config/#devserver)
+  - [devServer.proxy](https://cli.vuejs.org/zh/config/#devserver-proxy)
+  - [parallel](https://cli.vuejs.org/zh/config/#parallel)
+  - [pwa](https://cli.vuejs.org/zh/config/#pwa)
+  - [pluginOptions](https://cli.vuejs.org/zh/config/#pluginoptions)
+- [Babel](https://cli.vuejs.org/zh/config/#babel)
+- [ESLint](https://cli.vuejs.org/zh/config/#eslint)
+- [TypeScript](https://cli.vuejs.org/zh/config/#typescript)
+- [单元测试](https://cli.vuejs.org/zh/config/#%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95)
+  - [Jest](https://cli.vuejs.org/zh/config/#jest)
+  - [Mocha (配合 mocha-webpack)](https://cli.vuejs.org/zh/config/#mocha-配合-mocha-webpack)
+- [E2E 测试](https://cli.vuejs.org/zh/config/#e2e-%E6%B5%8B%E8%AF%95)
+  - [Cypress](https://cli.vuejs.org/zh/config/#cypress)
+  - [Nightwatch](https://cli.vuejs.org/zh/config/#nightwatch)
 
 
 
