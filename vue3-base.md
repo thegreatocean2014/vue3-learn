@@ -2529,3 +2529,260 @@ app.component('blog-post', {
 # 基础   结束
 
 ## 总结
+
+
+
+
+
+
+
+# Vue3 Api
+
+https://v3.cn.vuejs.org/api/application-config.html
+
+
+
+- 应用配置
+  - [errorHandler](https://v3.cn.vuejs.org/api/application-config.html#errorhandler)
+  - [warnHandler](https://v3.cn.vuejs.org/api/application-config.html#warnhandler)
+  - [globalProperties](https://v3.cn.vuejs.org/api/application-config.html#globalproperties)
+  - [isCustomElement](https://v3.cn.vuejs.org/api/application-config.html#iscustomelement)
+  - [optionMergeStrategies](https://v3.cn.vuejs.org/api/application-config.html#optionmergestrategies)
+  - [performance](https://v3.cn.vuejs.org/api/application-config.html#performance)
+
+- 应用 API
+  - [component](https://v3.cn.vuejs.org/api/application-api.html#component)
+  - [config](https://v3.cn.vuejs.org/api/application-api.html#config)
+  - [directive](https://v3.cn.vuejs.org/api/application-api.html#directive)
+  - [mixin](https://v3.cn.vuejs.org/api/application-api.html#mixin)
+  - [mount](https://v3.cn.vuejs.org/api/application-api.html#mount)
+  - [provide](https://v3.cn.vuejs.org/api/application-api.html#provide)
+  - [unmount](https://v3.cn.vuejs.org/api/application-api.html#unmount)
+  - [use](https://v3.cn.vuejs.org/api/application-api.html#use)
+
+- 全局 API
+  - [createApp](https://v3.cn.vuejs.org/api/global-api.html#createapp)
+  - [h](https://v3.cn.vuejs.org/api/global-api.html#h)
+  - [defineComponent](https://v3.cn.vuejs.org/api/global-api.html#definecomponent)
+  - [defineAsyncComponent](https://v3.cn.vuejs.org/api/global-api.html#defineasynccomponent)
+  - [resolveComponent](https://v3.cn.vuejs.org/api/global-api.html#resolvecomponent)
+  - [resolveDynamicComponent](https://v3.cn.vuejs.org/api/global-api.html#resolvedynamiccomponent)
+  - [resolveDirective](https://v3.cn.vuejs.org/api/global-api.html#resolvedirective)
+  - [withDirectives](https://v3.cn.vuejs.org/api/global-api.html#withdirectives)
+  - [createRenderer](https://v3.cn.vuejs.org/api/global-api.html#createrenderer)
+  - [nextTick](https://v3.cn.vuejs.org/api/global-api.html#nexttick)
+  - [mergeProps](https://v3.cn.vuejs.org/api/global-api.html#mergeprops)
+
+- [选项](https://v3.cn.vuejs.org/api/options-api)
+  - Data
+    - [data](https://v3.cn.vuejs.org/api/options-data.html#data-2)
+    - [props](https://v3.cn.vuejs.org/api/options-data.html#props)
+    - [computed](https://v3.cn.vuejs.org/api/options-data.html#computed)
+    - [methods](https://v3.cn.vuejs.org/api/options-data.html#methods)
+    - [watch](https://v3.cn.vuejs.org/api/options-data.html#watch)
+    - [emits](https://v3.cn.vuejs.org/api/options-data.html#emits)
+
+- - DOM
+    - [template](https://v3.cn.vuejs.org/api/options-dom.html#template)
+    - [render](https://v3.cn.vuejs.org/api/options-dom.html#render)
+
+- - 生命周期钩子
+    - [beforeCreate](https://v3.cn.vuejs.org/api/options-lifecycle-hooks.html#beforecreate)
+    - [created](https://v3.cn.vuejs.org/api/options-lifecycle-hooks.html#created)
+    - [beforeMount](https://v3.cn.vuejs.org/api/options-lifecycle-hooks.html#beforemount)
+    - [mounted](https://v3.cn.vuejs.org/api/options-lifecycle-hooks.html#mounted)
+    - [beforeUpdate](https://v3.cn.vuejs.org/api/options-lifecycle-hooks.html#beforeupdate)
+    - [updated](https://v3.cn.vuejs.org/api/options-lifecycle-hooks.html#updated)
+    - [activated](https://v3.cn.vuejs.org/api/options-lifecycle-hooks.html#activated)
+    - [deactivated](https://v3.cn.vuejs.org/api/options-lifecycle-hooks.html#deactivated)
+    - [beforeUnmount](https://v3.cn.vuejs.org/api/options-lifecycle-hooks.html#beforeunmount)
+    - [unmounted](https://v3.cn.vuejs.org/api/options-lifecycle-hooks.html#unmounted)
+    - [errorCaptured](https://v3.cn.vuejs.org/api/options-lifecycle-hooks.html#errorcaptured)
+    - [renderTracked](https://v3.cn.vuejs.org/api/options-lifecycle-hooks.html#rendertracked)
+    - [renderTriggered](https://v3.cn.vuejs.org/api/options-lifecycle-hooks.html#rendertriggered)
+
+- - 选项/资源
+    - [directives](https://v3.cn.vuejs.org/api/options-assets.html#directives)
+    - [components](https://v3.cn.vuejs.org/api/options-assets.html#components)
+
+- - 组合
+    - [mixins](https://v3.cn.vuejs.org/api/options-composition.html#mixins)
+    - [extends](https://v3.cn.vuejs.org/api/options-composition.html#extends)
+    - [provide / inject](https://v3.cn.vuejs.org/api/options-composition.html#provide-inject)
+    - [setup](https://v3.cn.vuejs.org/api/options-composition.html#setup)
+
+- - 杂项
+    - [name](https://v3.cn.vuejs.org/api/options-misc.html#name)
+    - [delimiters](https://v3.cn.vuejs.org/api/options-misc.html#delimiters)
+    - [inheritAttrs](https://v3.cn.vuejs.org/api/options-misc.html#inheritattrs)
+
+- 实例 property
+  - [$data](https://v3.cn.vuejs.org/api/instance-properties.html#data)
+  - [$props](https://v3.cn.vuejs.org/api/instance-properties.html#props)
+  - [$el](https://v3.cn.vuejs.org/api/instance-properties.html#el)
+  - [$options](https://v3.cn.vuejs.org/api/instance-properties.html#options)
+  - [$parent](https://v3.cn.vuejs.org/api/instance-properties.html#parent)
+  - [$root](https://v3.cn.vuejs.org/api/instance-properties.html#root)
+  - [$slots](https://v3.cn.vuejs.org/api/instance-properties.html#slots)
+  - [$refs](https://v3.cn.vuejs.org/api/instance-properties.html#refs)
+  - [$attrs](https://v3.cn.vuejs.org/api/instance-properties.html#attrs)
+
+- 实例方法
+  - [$watch](https://v3.cn.vuejs.org/api/instance-methods.html#watch)
+  - [$emit](https://v3.cn.vuejs.org/api/instance-methods.html#emit)
+  - [$forceUpdate](https://v3.cn.vuejs.org/api/instance-methods.html#forceupdate)
+  - [$nextTick](https://v3.cn.vuejs.org/api/instance-methods.html#nexttick)
+
+- 指令
+  - [v-text](https://v3.cn.vuejs.org/api/directives.html#v-text)
+  - [v-html](https://v3.cn.vuejs.org/api/directives.html#v-html)
+  - [v-show](https://v3.cn.vuejs.org/api/directives.html#v-show)
+  - [v-if](https://v3.cn.vuejs.org/api/directives.html#v-if)
+  - [v-else](https://v3.cn.vuejs.org/api/directives.html#v-else)
+  - [v-else-if](https://v3.cn.vuejs.org/api/directives.html#v-else-if)
+  - [v-for](https://v3.cn.vuejs.org/api/directives.html#v-for)
+  - [v-on](https://v3.cn.vuejs.org/api/directives.html#v-on)
+  - [v-bind](https://v3.cn.vuejs.org/api/directives.html#v-bind)
+  - [v-model](https://v3.cn.vuejs.org/api/directives.html#v-model)
+  - [v-slot](https://v3.cn.vuejs.org/api/directives.html#v-slot)
+  - [v-pre](https://v3.cn.vuejs.org/api/directives.html#v-pre)
+  - [v-cloak](https://v3.cn.vuejs.org/api/directives.html#v-cloak)
+  - [v-once](https://v3.cn.vuejs.org/api/directives.html#v-once)
+  - [v-is](https://v3.cn.vuejs.org/api/directives.html#v-is)
+
+- 特殊指令
+  - [key](https://v3.cn.vuejs.org/api/special-attributes.html#key)
+  - [ref](https://v3.cn.vuejs.org/api/special-attributes.html#ref)
+  - [is](https://v3.cn.vuejs.org/api/special-attributes.html#is)
+
+- 内置组件
+  - [component](https://v3.cn.vuejs.org/api/built-in-components.html#component)
+  - [transition](https://v3.cn.vuejs.org/api/built-in-components.html#transition)
+  - [transition-group](https://v3.cn.vuejs.org/api/built-in-components.html#transition-group)
+  - [keep-alive](https://v3.cn.vuejs.org/api/built-in-components.html#keep-alive)
+  - [slot](https://v3.cn.vuejs.org/api/built-in-components.html#slot)
+  - [teleport](https://v3.cn.vuejs.org/api/built-in-components.html#teleport)
+
+- [响应性 API](https://v3.cn.vuejs.org/api/reactivity-api)
+  - 响应性基础 API
+    - [reactive](https://v3.cn.vuejs.org/api/basic-reactivity.html#reactive)
+    - [readonly](https://v3.cn.vuejs.org/api/basic-reactivity.html#readonly)
+    - [isProxy](https://v3.cn.vuejs.org/api/basic-reactivity.html#isproxy)
+    - [isReactive](https://v3.cn.vuejs.org/api/basic-reactivity.html#isreactive)
+    - [isReadonly](https://v3.cn.vuejs.org/api/basic-reactivity.html#isreadonly)
+    - [toRaw](https://v3.cn.vuejs.org/api/basic-reactivity.html#toraw)
+    - [markRaw](https://v3.cn.vuejs.org/api/basic-reactivity.html#markraw)
+    - [shallowReactive](https://v3.cn.vuejs.org/api/basic-reactivity.html#shallowreactive)
+    - [shallowReadonly](https://v3.cn.vuejs.org/api/basic-reactivity.html#shallowreadonly)
+
+- - Refs
+    - [ref](https://v3.cn.vuejs.org/api/refs-api.html#ref)
+    - [unref](https://v3.cn.vuejs.org/api/refs-api.html#unref)
+    - [toRef](https://v3.cn.vuejs.org/api/refs-api.html#toref)
+    - [toRefs](https://v3.cn.vuejs.org/api/refs-api.html#torefs)
+    - [isRef](https://v3.cn.vuejs.org/api/refs-api.html#isref)
+    - [customRef](https://v3.cn.vuejs.org/api/refs-api.html#customref)
+    - [shallowRef](https://v3.cn.vuejs.org/api/refs-api.html#shallowref)
+    - [triggerRef](https://v3.cn.vuejs.org/api/refs-api.html#triggerref)
+
+- - Computed 与 watch
+    - [computed](https://v3.cn.vuejs.org/api/computed-watch-api.html#computed)
+    - [watchEffect](https://v3.cn.vuejs.org/api/computed-watch-api.html#watcheffect)
+    - watch
+      - [侦听一个单一源](https://v3.cn.vuejs.org/api/computed-watch-api.html#侦听一个单一源)
+      - [侦听多个源](https://v3.cn.vuejs.org/api/computed-watch-api.html#侦听多个源)
+      - [与 watchEffect 相同的行为](https://v3.cn.vuejs.org/api/computed-watch-api.html#与-watcheffect-相同的行为)
+
+[组合式 API](https://v3.cn.vuejs.org/api/composition-api.html)
+
+- [setup](https://v3.cn.vuejs.org/api/composition-api.html#setup)
+- [生命周期钩子](https://v3.cn.vuejs.org/api/composition-api.html#生命周期钩子)
+- [Provide / Inject](https://v3.cn.vuejs.org/api/composition-api.html#provide-inject)
+- [getCurrentInstance](https://v3.cn.vuejs.org/api/composition-api.html#getcurrentinstance)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
