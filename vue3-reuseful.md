@@ -2,11 +2,11 @@
 
 
 
-## **组合式 API**
+## 1. **组合式 API**
 
-### 介绍
+### 1.1 介绍
 
-#### 什么是组合式 API？
+#### 1.1.1 什么是组合式 API？
 
 通过创建 Vue 组件，我们可以将界面中可重复的部分连同其功能一起提取为可重用的代码段。仅此一项就可以使我们的应用在可维护性和灵活性方面走得更远。然而，我们的经验已经证明，光靠这一点可能是不够的，尤其是当你的应用变得非常大的时候——想想几百个组件。当处理这样的大型应用时，共享和重用代码变得尤为重要。
 
@@ -67,13 +67,13 @@ export default {
 
 
 
-####  组合式 API 基础
+####  1.1.2 组合式 API 基础
 
 既然我们知道了**为什么**，我们就可以知道**怎么做**。
 
 为了开始使用组合式 API，我们首先需要一个可以实际使用它的地方。在 Vue 组件中，我们将此位置称为 `setup`。
 
-##### `setup` 组件选项
+##### 1.1.1.1 `setup` 组件选项
 
 新的 `setup` 组件选项在创建组件**之前**执行，一旦 `props` 被解析，就作为组合式 API 的入口点。
 
@@ -137,7 +137,7 @@ setup (props) {
 
 这是我们的出发点，但它还不能工作，因为我们的 `repositories` 变量是非响应式的。这意味着从用户的角度来看，仓库列表将保持为空。
 
-#####  带 `ref` 的响应式变量
+#####  1.1.1.2 带 `ref` 的响应式变量
 
 在 Vue 3.0 中，我们可以通过一个新的 `ref` 函数使任何响应式变量在任何地方起作用，如下所示：
 
@@ -242,7 +242,7 @@ export default {
 
 我们将从生命周期钩子开始。
 
-##### 生命周期钩子注册内部 `setup`
+##### 1.1.1.3 生命周期钩子注册内部 `setup`
 
 为了使组合式 API 的功能比选项式 API 更加完整，我们还需要一种在 `setup` 中注册生命周期钩子的方法。这要归功于从 Vue 导出的几个新函数。组合式 API 上的生命周期钩子与选项式 API 的名称相同，但前缀为 `on`：即 `mounted` 会看起来像 `onMounted`。
 
@@ -273,7 +273,7 @@ setup (props) {
 
 现在我们需要对 `user` prop 的变化做出反应。为此，我们将使用独立的 `watch` 函数。
 
-##### `watch` 响应式更改
+##### 1.1.1.4 `watch` 响应式更改
 
 就像我们在组件中使用 `watch` 选项在 `user` property 上设置侦听器一样，我们也可以使用从 Vue 导入的 `watch` 函数执行相同的操作。它接受 3 个参数：
 
@@ -345,7 +345,7 @@ setup (props) {
 
 有了这些变化，我们就把第一个逻辑关注点移到了一个地方。我们现在可以对第二个关注点执行相同的操作——基于 `searchQuery` 进行过滤，这次是使用计算属性。
 
-##### 独立的 `computed` 属性
+##### 1.1.1.5 独立的 `computed` 属性
 
 与 `ref` 和 `watch` 类似，也可以使用从 Vue 导入的 `computed` 函数在 Vue 组件外部创建计算属性。让我们回到我们的 counter 例子：
 
@@ -547,13 +547,13 @@ export default {
 
 
 
-### Setup
+### 1.2 Setup
 
 本指南假定你已经阅读了[组合式 API 简介](https://v3.cn.vuejs.org/guide/composition-api-introduction.html)和[响应性原理](https://v3.cn.vuejs.org/guide/reactivity-fundamentals.html)。如果你不熟悉组合式 API，请先阅读这篇文章。
 
 本节使用[单文件组件](https://v3.cn.vuejs.org/guide/single-file-component.html)代码示例的语法
 
-#### 参数
+#### 1.2.1 参数
 
 使用 `setup` 函数时，它将接受两个参数：
 
@@ -642,7 +642,7 @@ export default {
 
 请注意，与 `props` 不同，`attrs` 和 `slots` 是**非**响应式的。如果你打算根据 `attrs` 或 `slots` 更改应用副作用，那么应该在 `onUpdated` 生命周期钩子中执行此操作。
 
-####  访问组件的 property
+#### 1.2.2 访问组件的 property
 
 执行 `setup` 时，组件实例尚未被创建。因此，你只能访问以下 property：
 
@@ -657,7 +657,7 @@ export default {
 - `computed`
 - `methods`
 
-#### 结合模板使用
+#### 1.2.3 结合模板使用
 
 如果 `setup` 返回一个对象，则可以在组件的模板中像传递给 `setup` 的 `props` property 一样访问该对象的 property：
 
@@ -687,7 +687,7 @@ export default {
 
 注意，从 `setup` 返回的 [refs](https://v3.cn.vuejs.org/api/refs-api.html#ref) 在模板中访问时是[被自动解开](https://v3.cn.vuejs.org/guide/reactivity-fundamentals.html#ref-解开)的，因此不应在模板中使用 `.value`。
 
-#### 使用渲染函数
+#### 1.2.4 使用渲染函数
 
 `setup` 还可以返回一个渲染函数，该函数可以直接使用在同一作用域中声明的响应式状态：
 
@@ -706,13 +706,13 @@ export default {
 }
 ```
 
-#### 使用 `this`
+#### 1.2.5 使用 `this`
 
 **在 `setup()` 内部，`this` 不会是该活跃实例的引用**，因为 `setup()` 是在解析其它组件选项之前被调用的，所以 `setup()` 内部的 `this` 的行为与其它选项中的 `this` 完全不同。这在和其它选项式 API 一起使用 `setup()` 时可能会导致混淆。
 
 
 
-### 生命周期钩子
+### 1.3 生命周期钩子
 
 你可以通过在生命周期钩子前面加上 “on” 来访问组件的生命周期钩子。
 
@@ -753,13 +753,13 @@ export default {
 
 
 
-### Provide / Inject
+### 1.4 Provide / Inject
 
 本指南假定你已经阅读了 [Provide / Inject](https://v3.cn.vuejs.org/guide/component-provide-inject.html)、[组合式 API 介绍](https://v3.cn.vuejs.org/guide/composition-api-introduction.html)和[响应性基础](https://v3.cn.vuejs.org/guide/reactivity-fundamentals.html)。如果你不熟悉组合式 API，请先阅读这篇文章。
 
 我们也可以在组合式 API 中使用 [provide/inject](https://v3.cn.vuejs.org/guide/component-provide-inject.html)。两者都只能在当前活动实例的 [`setup()`](https://v3.cn.vuejs.org/guide/composition-api-setup.html) 期间调用。
 
-#### 设想场景
+#### 1.4.1 设想场景
 
 假设我们要重写以下代码，其中包含一个 `MyMap` 组件，该组件使用组合式 API 为 `MyMarker` 组件提供用户的位置。
 
@@ -796,7 +796,7 @@ export default {
 </script>
 ```
 
-#### 使用 Provide
+#### 1.4.2 使用 Provide
 
 在 `setup()` 中使用 `provide` 时，我们首先从 `vue` 显式导入 `provide` 方法。这使我们能够调用 `provide` 时来定义每个 property。
 
@@ -832,7 +832,7 @@ export default {
 </script>
 ```
 
-#### 使用 inject
+#### 1.4.3 使用 inject
 
 在 `setup()` 中使用 `inject` 时，还需要从 `vue` 显式导入它。一旦我们这样做了，我们就可以调用它来定义如何将它暴露给我们的组件。
 
@@ -862,9 +862,9 @@ export default {
 </script>
 ```
 
-#### 响应性
+#### 1.4.4 响应性
 
-##### 添加响应性
+##### 1.4.4.1 添加响应性
 
 为了增加 provide 值和 inject 值之间的响应性，我们可以在 provide 值时使用 [ref](https://v3.cn.vuejs.org/guide/reactivity-fundamentals.html#创建独立的响应式值作为-refs) 或 [reactive](https://v3.cn.vuejs.org/guide/reactivity-fundamentals.html#声明响应式状态)。
 
@@ -900,7 +900,7 @@ export default {
 
 现在，如果这两个 property 中有任何更改，`MyMarker` 组件也将自动更新！
 
-##### 修改响应式 property
+##### 1.4.4.2 修改响应式 property
 
 当使用响应式 provide / inject 值时，**建议尽可能，在\*提供者\*内保持响应式 property 的任何更改**。
 
@@ -1036,7 +1036,7 @@ export default {
 
 
 
-### 模板引用
+### 1.5 模板引用
 
 本节代码示例使用[单文件组件](https://v3.cn.vuejs.org/guide/single-file-component.html)的语法
 
@@ -1073,7 +1073,7 @@ export default {
 
 作为模板使用的 ref 的行为与任何其他 ref 一样：它们是响应式的，可以传递到 (或从中返回) 复合函数中。
 
-#### JSX 中的用法
+#### 1.5.1 JSX 中的用法
 
 ```js
 export default {
@@ -1091,7 +1091,7 @@ export default {
 }
 ```
 
-#### `v-for` 中的用法
+#### 1.5.2 `v-for` 中的用法
 
 组合式 API 模板引用在 `v-for` 内部使用时没有特殊处理。相反，请使用函数引用执行自定义处理：
 
@@ -1124,7 +1124,7 @@ export default {
 </script>
 ```
 
-#### 侦听模板引用
+#### 1.5.3 侦听模板引用
 
 侦听模板引用的变更可以替代前面例子中演示使用的生命周期钩子。
 
@@ -1186,9 +1186,9 @@ export default {
 
 
 
-## Mixin
+## 2. Mixin
 
-### 基础
+### 2.1 基础
 
 Mixin 提供了一种非常灵活的方式，来分发 Vue 组件中的可复用功能。一个 mixin 对象可以包含任意组件选项。当组件使用 mixin 对象时，所有 mixin 对象的选项将被“混合”进入该组件本身的选项。
 
@@ -1215,7 +1215,7 @@ const app = Vue.createApp({
 app.mount('#mixins-basic') // => "hello from mixin!"
 ```
 
-### 选项合并
+### 2.2 选项合并
 
 当组件和 mixin 对象含有同名选项时，这些选项将以恰当的方式进行“合并”。
 
@@ -1298,7 +1298,7 @@ vm.bar() // => "bar"
 vm.conflicting() // => "from self"
 ```
 
-### 全局 mixin
+### 2.3 全局 mixin
 
 你还可以为 Vue 应用程序全局应用 mixin：
 
@@ -1350,7 +1350,7 @@ app.mount('#mixins-global')
 
 大多数情况下，只应当应用于自定义选项，就像上面示例一样。推荐将其作为[插件](https://v3.cn.vuejs.org/guide/plugins.html)发布，以避免重复应用 mixin。
 
-### 自定义选项合并策略
+### 2.4 自定义选项合并策略
 
 自定义选项在合并时，默认策略为简单地覆盖已有值。如果想让某个自定义选项以自定义逻辑进行合并，可以在 `app.config.optionMergeStrategies` 中添加一个函数：
 
@@ -1410,9 +1410,9 @@ app.mixin({
 
 
 
-## 自定义指令
+## 3. 自定义指令
 
-### 简介
+### 3.1 简介
 
 除了核心功能默认内置的指令 (例如 `v-model` 和 `v-show`)，Vue 也允许注册自定义指令。注意，在 Vue 中，代码复用和抽象的主要形式是组件。然而，有的情况下，你仍然需要对普通 DOM 元素进行底层操作，这时候就会用到自定义指令。举个聚焦输入框的例子，如下：
 
@@ -1453,7 +1453,7 @@ directives: {
 
 
 
-### 钩子函数
+### 3.2 钩子函数
 
 一个指令定义对象可以提供如下几个钩子函数 (均为可选)：
 
@@ -1566,7 +1566,7 @@ app.directive('pin', {
 })
 ```
 
-### 函数简写
+### 3.3 函数简写
 
 在前面的例子中，你可能想在 `mounted` 和 `updated` 时触发相同行为，而不关心其他的钩子函数。那么你可以通过将这个回调函数传递给指令来实现：
 
@@ -1578,7 +1578,7 @@ app.directive('pin', (el, binding) => {
 })
 ```
 
-### 对象字面量
+### 3.4 对象字面量
 
 如果指令需要多个值，可以传入一个 JavaScript 对象字面量。记住，指令函数能够接受所有合法的 JavaScript 表达式。
 
@@ -1593,7 +1593,7 @@ app.directive('demo', (el, binding) => {
 })
 ```
 
-### 在组件中使用
+### 3.5 在组件中使用
 
 和[非 prop 的 attribute](https://v3.cn.vuejs.org/guide/component-attrs.html) 类似，当在组件中使用时，自定义指令总是会被应用在组件的根节点上。
 
@@ -1617,7 +1617,7 @@ app.component('my-component', {
 
 
 
-## Teleport
+## 4. Teleport
 
 Vue 鼓励我们通过将 UI 和相关行为封装到组件中来构建 UI。我们可以将它们嵌套在另一个内部，以构建一个组成应用程序 UI 的树。
 
@@ -1703,7 +1703,7 @@ app.component('modal-button', {
 
 因此，一旦我们单击按钮打开模态框，Vue 将正确地将模态框内容渲染为 `body` 标签的子级。
 
-### 与 Vue components 一起使用
+### 4.1 与 Vue components 一起使用
 
 如果 `<teleport>` 包含 Vue 组件，则它仍将是 `<teleport>` 父组件的逻辑子组件：
 
@@ -1736,7 +1736,7 @@ app.component('child-component', {
 
 这也意味着来自父组件的注入按预期工作，并且子组件将嵌套在 Vue Devtools 中的父组件之下，而不是放在实际内容移动到的位置。
 
-### 在同一目标上使用多个 teleport
+### 4.2 在同一目标上使用多个 teleport
 
 一个常见的用例场景是一个可重用的 `<Modal>` 组件，它可能同时有多个实例处于活动状态。对于这种情况，多个 `<teleport>` 组件可以将其内容挂载到同一个目标元素。顺序将是一个简单的追加——稍后挂载将位于目标元素中较早的挂载之后。
 
@@ -1759,7 +1759,7 @@ app.component('child-component', {
 
 
 
-## 渲染函数
+## 5. 渲染函数
 
 Vue 推荐在绝大多数情况下使用模板来创建你的 HTML。然而在一些场景中，你真的需要 JavaScript 的完全编程的能力。这时你可以用**渲染函数**，它比模板更接近编译器。
 
@@ -1844,7 +1844,7 @@ app.component('anchored-heading', {
 
 `render()` 函数的实现要精简得多，但是需要非常熟悉组件的实例 property。在这个例子中，你需要知道，向组件中传递不带 `v-slot` 指令的子节点时，比如 `anchored-heading` 中的 `Hello world!` ，这些子节点被存储在组件实例中的 `$slots.default` 中。如果你还不了解，**在深入渲染函数之前推荐阅读[实例 property API](https://v3.cn.vuejs.org/api/instance-properties.html)**。
 
-### DOM 树
+### 5.1 DOM 树
 
 在深入渲染函数之前，了解一些浏览器的工作原理是很重要的。以下面这段 HTML 为例：
 
@@ -1882,7 +1882,7 @@ render() {
 
 在这两种情况下，Vue 都会自动保持页面的更新，即便 `blogTitle` 发生了改变。
 
-###  虚拟 DOM 树
+###  5.2 虚拟 DOM 树
 
 Vue 通过建立一个**虚拟 DOM** 来追踪自己要如何改变真实 DOM。请仔细看这行代码：
 
@@ -1892,7 +1892,7 @@ return h('h1', {}, this.blogTitle)
 
 `h()` 到底会返回什么呢？其实不是一个*实际*的 DOM 元素。它更准确的名字可能是 createNodeDescription，因为它所包含的信息会告诉 Vue 页面上需要渲染什么样的节点，包括及其子节点的描述信息。我们把这样的节点描述为“虚拟节点 (virtual node)”，也常简写它为 **VNode**。“虚拟 DOM”是我们对由 Vue 组件树建立起来的整个 VNode 树的称呼。
 
-### `h()` 参数
+### 5.3 `h()` 参数
 
 `h()` 函数是一个用于创建 vnode 的实用程序。也许可以更准确地将其命名为 `createVNode()`，但由于频繁使用和简洁，它被称为 `h()` 。它接受三个参数：
 
@@ -1929,7 +1929,7 @@ h(
 )
 ```
 
-### 完整实例
+### 5.4 完整实例
 
 有了这些知识，我们现在可以完成我们最开始想实现的组件：
 
@@ -1979,7 +1979,7 @@ app.component('anchored-heading', {
 })
 ```
 
-### 约束
+### 5.5 约束
 
 ####  VNodes 必须唯一
 
@@ -2007,9 +2007,9 @@ render() {
 }
 ```
 
-### 使用 JavaScript 代替模板功能
+### 5.6 使用 JavaScript 代替模板功能
 
-#### `v-if` 和 `v-for`
+#### 5.6.1 `v-if` 和 `v-for`
 
 只要在原生的 JavaScript 中可以轻松完成的操作，Vue 的渲染函数就不会提供专有的替代方法。比如，在模板中使用的 `v-if` 和 `v-for`：
 
@@ -2035,7 +2035,7 @@ render() {
 }
 ```
 
-#### `v-model`
+#### 5.6.2 `v-model`
 
 `v-model` 指令扩展为 `modelValue` 和 `onUpdate:modelValue` 在模板编译过程中，我们必须自己提供这些 prop：
 
@@ -2050,7 +2050,7 @@ render() {
 }
 ```
 
-#### `v-on`
+#### 5.6.3 `v-on`
 
 我们必须为事件处理程序提供一个正确的 prop 名称，例如，要处理 `click` 事件，prop 名称应该是 `onClick`。
 
@@ -2062,7 +2062,7 @@ render() {
 }
 ```
 
-#### 事件修饰符
+#### 5.6.4 事件修饰符
 
 对于 `.passive` 、 `.capture`和 `.once` 事件修饰符，可以使用驼峰写法将他们拼接在事件名后面：
 
@@ -2110,7 +2110,7 @@ render() {
 }
 ```
 
-####  插槽
+#### 5.6.5 插槽
 
 你可以通过 [`this.$slots`](https://v3.cn.vuejs.org/api/instance-properties.html#slots) 访问静态插槽的内容，每个插槽都是一个 VNode 数组：
 
@@ -2152,7 +2152,7 @@ render() {
 }
 ```
 
-### JSX
+### 5.7 JSX
 
 如果你写了很多渲染函数，可能会觉得下面这样的代码写起来很痛苦：
 
@@ -2194,7 +2194,7 @@ app.mount('#demo')
 
 有关 JSX 如何映射到 JavaScript 的更多信息，请参阅[使用文档](https://github.com/vuejs/jsx-next#installation) 。
 
-### 模板编译
+### 5.8 模板编译
 
 你可能会有兴趣知道，Vue 的模板实际上被编译成了渲染函数。这是一个实现细节，通常不需要关心。但如果你想看看模板的功能具体是怎样被编译的，可能会发现会非常有意思。下面是一个使用 `Vue.compile` 来实时编译模板字符串的简单示例：
 
@@ -2218,7 +2218,7 @@ export function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 
 
-## 插件
+## 6. 插件
 
 插件是自包含的代码，通常向 Vue 添加全局级功能。它可以是公开 `install()` 方法的 `object`，也可以是 `function`
 
@@ -2230,7 +2230,7 @@ export function render(_ctx, _cache, $props, $setup, $data, $options) {
 4. 添加全局实例方法，通过把它们添加到 `config.globalProperties` 上实现。
 5. 一个库，提供自己的 API，同时提供上面提到的一个或多个功能。如 [vue-router](https://github.com/vuejs/vue-router)
 
-### 编写插件
+### 6.1 编写插件
 
 为了更好地理解如何创建自己的 Vue.js 版插件，我们将创建一个非常简化的插件版本，它显示 `i18n` 准备好的字符串。
 
@@ -2323,7 +2323,7 @@ export default {
 }
 ```
 
-### 使用插件
+### 6.2 使用插件
 
 在使用 `createApp()` 初始化 Vue 应用程序后，你可以通过调用 `use()` 方法将插件添加到你的应用程序中。
 
