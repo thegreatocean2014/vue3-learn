@@ -207,7 +207,6 @@ https://v3.cn.vuejs.org/api/
       - [@vitejs/plugin-vue](https://v3.cn.vuejs.org/api/sfc-tooling.html#vitejs-plugin-vue)
       - [vue-loader](https://v3.cn.vuejs.org/api/sfc-tooling.html#vue-loader)
     
-
   - 《script setup》
     - [基本语法](https://v3.cn.vuejs.org/api/sfc-script-setup.html#基本语法)
     - [响应式](https://v3.cn.vuejs.org/api/sfc-script-setup.html#响应式)
@@ -219,14 +218,15 @@ https://v3.cn.vuejs.org/api/
     - [顶层 await](https://v3.cn.vuejs.org/api/sfc-script-setup.html#顶层-await)
     - [仅限 TypeScript 的功能](https://v3.cn.vuejs.org/api/sfc-script-setup.html#仅限-typescript-的功能)
     - [限制：没有 Src 导入](https://v3.cn.vuejs.org/api/sfc-script-setup.html#限制-没有-src-导入)
-
-- - 《style》特性
-
+    
+  - 《style》特性
+  
     - ```
       <style scoped>
       <style module>
       状态驱动的动态 CSS
       ```
-
+  
       
-
+  
+  
