@@ -1,0 +1,105 @@
+https://next.router.vuejs.org/zh/api/
+
+[Vue Router](https://next.router.vuejs.org/zh/)
+
+- <router-link> Props
+  - [to](https://next.router.vuejs.org/zh/api/#to)
+  - [replace](https://next.router.vuejs.org/zh/api/#replace)
+  - [active-class](https://next.router.vuejs.org/zh/api/#active-class)
+  - [aria-current-value](https://next.router.vuejs.org/zh/api/#aria-current-value)
+  - [custom](https://next.router.vuejs.org/zh/api/#custom)
+  - [exact-active-class](https://next.router.vuejs.org/zh/api/#exact-active-class)
+- <router-link> 的 v-slot
+  - [示例：将激活的 class 应用在外层元素](https://next.router.vuejs.org/zh/api/#示例：将激活的-class-应用在外层元素)
+- <router-view> Props
+  - [name](https://next.router.vuejs.org/zh/api/#name)
+  - [route](https://next.router.vuejs.org/zh/api/#route)
+- [<router-view>  的 v-slot](https://next.router.vuejs.org/zh/api/#router-view-的-v-slot)
+- createRouter
+  - [参数](https://next.router.vuejs.org/zh/api/#参数)
+- createWebHistory
+  - [参数](https://next.router.vuejs.org/zh/api/#参数-1)
+  - [示例](https://next.router.vuejs.org/zh/api/#示例)
+- createWebHashHistory
+  - [参数](https://next.router.vuejs.org/zh/api/#参数-2)
+  - [示例](https://next.router.vuejs.org/zh/api/#示例-1)
+- createMemoryHistory
+  - [参数](https://next.router.vuejs.org/zh/api/#参数-3)
+  - [Returns](https://next.router.vuejs.org/zh/api/#returns)
+- NavigationFailureType
+  - [成员](https://next.router.vuejs.org/zh/api/#成员)
+- [START_LOCATION](https://next.router.vuejs.org/zh/api/#start-location)
+- Composition API
+  - [onBeforeRouteLeave](https://next.router.vuejs.org/zh/api/#onbeforerouteleave)
+  - [onBeforeRouteUpdate](https://next.router.vuejs.org/zh/api/#onbeforerouteupdate)
+  - [useLink](https://next.router.vuejs.org/zh/api/#uselink)
+  - [useRoute](https://next.router.vuejs.org/zh/api/#useroute)
+  - [useRouter](https://next.router.vuejs.org/zh/api/#userouter)
+- [TypeScript](https://next.router.vuejs.org/zh/api/#typescript)
+  - Router 属性
+    - [currentRoute](https://next.router.vuejs.org/zh/api/#currentroute)
+    - [options](https://next.router.vuejs.org/zh/api/#options)
+  - Router 方法
+    - [addRoute](https://next.router.vuejs.org/zh/api/#addroute)
+    - [addRoute](https://next.router.vuejs.org/zh/api/#addroute-1)
+    - [afterEach](https://next.router.vuejs.org/zh/api/#aftereach)
+    - [back](https://next.router.vuejs.org/zh/api/#back)
+    - [beforeEach](https://next.router.vuejs.org/zh/api/#beforeeach)
+    - [beforeResolve](https://next.router.vuejs.org/zh/api/#beforeresolve)
+    - [forward](https://next.router.vuejs.org/zh/api/#forward)
+    - [getRoutes](https://next.router.vuejs.org/zh/api/#getroutes)
+    - [go](https://next.router.vuejs.org/zh/api/#go)
+    - [hasRoute](https://next.router.vuejs.org/zh/api/#hasroute)
+    - [isReady](https://next.router.vuejs.org/zh/api/#isready)
+    - [onError](https://next.router.vuejs.org/zh/api/#onerror)
+    - [push](https://next.router.vuejs.org/zh/api/#push)
+    - [removeRoute](https://next.router.vuejs.org/zh/api/#removeroute)
+    - [replace](https://next.router.vuejs.org/zh/api/#replace-1)
+    - [resolve](https://next.router.vuejs.org/zh/api/#resolve)
+  - RouterOptions
+    - [history](https://next.router.vuejs.org/zh/api/#history)
+    - [linkActiveClass](https://next.router.vuejs.org/zh/api/#linkactiveclass)
+    - [linkExactActiveClass](https://next.router.vuejs.org/zh/api/#linkexactactiveclass)
+    - [parseQuery](https://next.router.vuejs.org/zh/api/#parsequery)
+    - [routes](https://next.router.vuejs.org/zh/api/#routes)
+    - [scrollBehavior](https://next.router.vuejs.org/zh/api/#scrollbehavior)
+    - [stringifyQuery](https://next.router.vuejs.org/zh/api/#stringifyquery)
+  - RouteRecordRaw
+    - [path](https://next.router.vuejs.org/zh/api/#path)
+    - [redirect](https://next.router.vuejs.org/zh/api/#redirect)
+    - [children](https://next.router.vuejs.org/zh/api/#children)
+    - [alias](https://next.router.vuejs.org/zh/api/#alias)
+    - [name](https://next.router.vuejs.org/zh/api/#name-1)
+    - [beforeEnter](https://next.router.vuejs.org/zh/api/#beforeenter)
+    - [props](https://next.router.vuejs.org/zh/api/#props)
+    - [meta](https://next.router.vuejs.org/zh/api/#meta)
+  - RouteRecordNormalized
+    - [aliasOf](https://next.router.vuejs.org/zh/api/#aliasof)
+    - [beforeEnter](https://next.router.vuejs.org/zh/api/#beforeenter-1)
+    - [children](https://next.router.vuejs.org/zh/api/#children-1)
+    - [components](https://next.router.vuejs.org/zh/api/#components)
+    - [meta](https://next.router.vuejs.org/zh/api/#meta-1)
+    - [name](https://next.router.vuejs.org/zh/api/#name-2)
+    - [path](https://next.router.vuejs.org/zh/api/#path-1)
+    - [props](https://next.router.vuejs.org/zh/api/#props-1)
+    - [redirect](https://next.router.vuejs.org/zh/api/#redirect-1)
+  - [RouteLocationRaw](https://next.router.vuejs.org/zh/api/#routelocationraw)
+  - [RouteLocation](https://next.router.vuejs.org/zh/api/#routelocation)
+  - RouteLocationNormalized
+    - [fullPath](https://next.router.vuejs.org/zh/api/#fullpath)
+    - [hash](https://next.router.vuejs.org/zh/api/#hash)
+    - [query](https://next.router.vuejs.org/zh/api/#query)
+    - [matched](https://next.router.vuejs.org/zh/api/#matched)
+    - [meta](https://next.router.vuejs.org/zh/api/#meta-2)
+    - [name](https://next.router.vuejs.org/zh/api/#name-3)
+    - [params](https://next.router.vuejs.org/zh/api/#params)
+    - [path](https://next.router.vuejs.org/zh/api/#path-2)
+    - [redirectedFrom](https://next.router.vuejs.org/zh/api/#redirectedfrom)
+  - NavigationFailure
+    - [from](https://next.router.vuejs.org/zh/api/#from)
+    - [to](https://next.router.vuejs.org/zh/api/#to-1)
+    - [type](https://next.router.vuejs.org/zh/api/#type)
+  - [NavigationGuard](https://next.router.vuejs.org/zh/api/#navigationguard)
+  - Component Injections
+    - [Component Injected 属性](https://next.router.vuejs.org/zh/api/#component-injected-属性)
+    - [Component Enabled Options](https://next.router.vuejs.org/zh/api/#component-enabled-options)
